@@ -346,6 +346,7 @@ Languages:
                 self._repos.add(name)
                 self._stargazers += repo.get("stargazers").get("totalCount", 0)
                 self._forks += repo.get("forkCount", 0)
+                print(f"""Get Stats -> Added {repo.get("stargazers").get("totalCount", 0)} Stargazers from {repo.get("nameWithOwner")}\n""")
 
                 for lang in repo.get("languages", {}).get("edges", []):
                     name = lang.get("node", {}).get("name", "Other")
